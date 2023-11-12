@@ -70,7 +70,6 @@ class Post(BaseModel):
         related_name='posts'
     )
     image = models.ImageField('Фото', upload_to='posts_images', blank=True)
-    comment_count = models.IntegerField('Количество комментариев', default=0)
 
     class Meta:
         verbose_name = 'публикация'

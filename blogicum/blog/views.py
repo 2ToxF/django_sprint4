@@ -11,7 +11,7 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from .constants import BLOG_TEMP_DIR, PAGINATE_NUM
 from .forms import CommentForm, PostForm
 from .models import Category, Comment, Post
-from .non_view_funcs import get_posts
+from .utils import get_posts
 
 User = get_user_model()
 
@@ -48,7 +48,7 @@ def profile(request, username):
     context = {'profile': profile}
 
     if request.user == profile:
-        posts = profile.posts.all().annotate(
+        posts = profile.posts.annotate(
             comment_count=Count('comments')
         ).order_by('-pub_date')
     else:

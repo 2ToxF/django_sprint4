@@ -4,11 +4,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+ql0lvauq9x*g_-7nf!a$oyaxmb+w+vi!@macs*lbcvd6wvt75'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    'www.blogicumtox.pythonanewhere.com',
+    'blogicumtox.pythonanywhere.com',
 ]
 
 CSRF_FAILURE_VIEW = 'pages.views.csrf_failure'
